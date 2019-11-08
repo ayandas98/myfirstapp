@@ -1,0 +1,24 @@
+<div class="container">
+        <div class="row">
+          <div class="col-md-3 mr-5"  *ngFor="let item of products">
+              <div class="card" style="width: 18rem;">
+                  <img [src]="item.image" class="card-img-top" alt="...">
+                  <div *ngIf="item.isAvailable">
+                  <div class="card-body">
+                    <h5 class="card-title">{{item.name | uppercase}}</h5>
+                    
+                    <p class="card-text">{{item.description}}</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{item.price}}</li>
+                  </ul>
+                  <div class="card-body">
+                    <button href="#" class="btn btn-primary" [disabled]=!(itemisAvailable)>Have in Cart</button>
+                    <button href="#" class="btn btn-secondary" [disabled]=!(itemisAvailable)>Buy Now</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+          
+        </div>
+        </div>
